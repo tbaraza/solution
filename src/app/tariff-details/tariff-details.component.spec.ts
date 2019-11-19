@@ -16,7 +16,7 @@ describe('TariffDetailsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TariffDetailsComponent);
     component = fixture.componentInstance;
-    // fixture.detectChanges();
+    fixture.detectChanges();
   });
 
   it('should create', () => {

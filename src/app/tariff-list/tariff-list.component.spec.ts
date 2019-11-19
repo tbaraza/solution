@@ -1,14 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-// import { AppRoutingModule } from '../app-routing.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Observable, of } from 'rxjs';
 
-import tariffList from '../../assets/tariffs.json'
 import { TariffListComponent } from './tariff-list.component';
-import { Tariff, FilterCriteria, TariffService } from '../services/tariff/tariff.service';
-import { TariffDetailsComponent } from '../tariff-details/tariff-details.component';
+import { TariffService } from '../services/tariff/tariff.service';
 
 describe('TariffListComponent', () => {
   let component: TariffListComponent;

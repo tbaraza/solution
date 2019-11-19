@@ -2,10 +2,9 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { defer } from 'rxjs';
 
-// import { tariffList } from '../assets/tariffs.mock';
 import { TariffService, Tariff } from './tariff.service';
-import tariffList from '../../../assets/tariffs.json'
 
+// TO DO: Move this to a test util file
 export function asyncData<T>(data: Tariff[]) {
   return defer(() => Promise.resolve(data));
 }
@@ -51,12 +50,6 @@ describe('TariffService', () => {
     }
 ];
 
-  // beforeEach(() => {
-  //   TestBed.configureTestingModule({
-  //     imports: [HttpClientTestingModule], 
-  //   })
-  // });
-
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule], 
@@ -82,8 +75,8 @@ describe('TariffService', () => {
   })
 
   it('should sort tariffs based on price criteria', () => {
-    const sortedTariffs = tariffService.sortTariffs(tariffList, 'price');
+    tariffService.sortTariffs(expectedTariffs, 'price');
 
-    expect(sortedTariffs[0]).toEqual(expectedTariffs[1]);
+    expect(expectedTariffs[0].id).toEqual(98);
   })
 });
