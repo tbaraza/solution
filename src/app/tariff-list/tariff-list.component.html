@@ -1,0 +1,48 @@
+
+<section class="tariffs-section">
+    <h2>Tariffs</h2>
+    
+    <div class="tariffs-sort-container">
+        <label class="tariffs-sort-label" for="tariffs-sort">sort by:</label>
+        <select id="tariffs-sort" (change)="sortTariffs($event.target.value)">
+            <option *ngFor="let filter of sortFilters" [value]="filter.value">{{ filter.label }}</option>
+        </select>
+    </div>
+    
+    <div class="tariff-list-container">
+        <div *ngFor="let tariff of tariffs; index as counter;" class="tariff-container">
+            <p class="counter">{{ counter + 1 }}.</p>
+            <div class="tariff">
+                <p>{{ tariff.name }}</p>
+                <div class="tariff__download-speed-container">
+                    <div class="tariff__download-speed">
+                        <p class="tariff-speed-title">download</p>
+                        <fa-icon [icon]="faLongArraowAltDown" class="download-icon"></fa-icon>
+                        <span class="tarrif__download-speed-text">{{ tariff.speed.downloadSpeed }}{{ tariff.speed.metric }}</span>
+                    </div>
+                    <div class="tariff__upload-speed">
+                        <p class="tariff-speed-title">upload</p>
+                        <fa-icon [icon]="faLongArrowAltUp" class="download-icon"></fa-icon>
+                        <span class="tarrif__download-speed-text">{{ tariff.speed.uploadSpeed }}{{ tariff.speed.metric }}</span>
+                    </div>
+                </div>
+                
+                <div class="tariff-benefits-container">
+                    <ng-container *ngFor="let benefit of tariff.benefits; let i=index;">
+                        <li *ngIf="i < tariff.benefitsToDisplay">
+                            {{ benefit }}
+                        </li>
+                    </ng-container>
+
+                    <p  (click)="onToggleBenefits(tariff)" *ngIf="tariff.showMore"  class="more-tariff-benefits">more</p>
+                    <p  (click)="onToggleBenefits(tariff)" *ngIf="tariff.showLess"  class="more-tariff-benefits">less</p>
+                </div>
+                    
+                <div class="tariff-action-container">
+                    <p class="tariff__price">{{ tariff.price | currency: 'EUR' }}</p>
+                    <button class="tariff-button" [routerLink]="['/tariffs', tariff.id]"><span>To Tariff</span><fa-icon [icon]="faChevronRight"></fa-icon></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

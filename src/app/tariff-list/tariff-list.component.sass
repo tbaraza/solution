@@ -1,0 +1,204 @@
+@import 'src/assets/stylesheets/variables'
+
+.tariffs-section
+    display: flex
+    flex-direction: column
+    margin: 0 1rem
+
+.tariffs-sort-container
+    margin-bottom: 1rem
+    cursor: pointer
+    display: flex
+    justify-content: center
+    align-items: center
+    align-self: flex-start
+    border: 1px solid #b9a3a3
+    padding: 0.2rem 0 0.2rem 0.4rem
+
+    #tariffs-sort
+        font-size: 1rem
+        border: none
+        background: none
+
+    .tariffs-sort-label
+        font-weight: bold
+
+.tariff-list-table
+    width: 100%
+    border-collapse: separate
+
+.tariff-list-row
+    border: 1px solid #000000
+
+.tariff-list-container
+    overflow-y: scroll
+
+.tariff-container
+    border: 1px solid #aacde4
+    margin-bottom: 0.5rem
+    padding: 0.2rem 0.1rem 1rem 0.3rem
+
+.tariff
+    display: flex
+    justify-content: space-around
+    cursor: pointer
+
+    .tariff__price
+        font-weight: bold
+        font-size: 1.2rem
+    
+    .tariff-speed-title
+        display: relative
+        padding-bottom: 0.6rem
+
+.tariff__download-speed
+    width: 3rem
+    text-align: justify
+    word-break: break-all
+
+@mixin icon 
+    color: #000000
+
+.download-icon
+    @include icon
+    padding-right: 0.9rem
+
+
+.tariff-action-container
+    display: flex
+    justify-content: space-between
+    width: 40%
+
+.tariff-button
+    padding: 3rem 0.5rem
+
+@media (max-width: $layout-breakpoint-mobile)
+    .tariff-speed-title
+        display: none
+
+    .tariff__upload-speed
+        display: none
+
+    .tariff-button
+        span
+            display: none
+
+    .tariff-benefits-container
+        display: none
+
+@media (min-width: $layout-breakpoint-mobile)
+    .tariffs-section
+        font-size: 1.3rem
+    
+    .tariffs-sort-icon
+        display: none
+
+    .tariff
+        justify-content: space-between
+        padding: 0 0.9rem 0 2rem
+  
+    #tariffs-sort
+        margin-left: 0.2rem
+
+    .tariff__download-speed-container
+        display: flex
+        flex-direction: column
+        
+        .tariff__download-speed, .tariff__upload-speed
+            width: auto
+            padding-bottom: 1.5rem
+
+            .download-icon
+                border: 1px solid gray
+                padding: 0.4rem 1rem
+
+            .tarrif__download-speed-text
+                border: 1px solid gray
+                padding: 0.4rem 1rem
+                border-radius: 0 1rem 1rem 0
+
+    .tariff-action-container
+        flex-direction: column
+        width: 25%
+        p
+            text-align: end
+
+        .tariff-button
+            padding: 0.5rem
+            font-size: 0.85rem
+            span
+                padding-right: 1rem
+                color: #ffffff
+
+@media (min-width: $layout-breakpoint-tablet)
+    .tariffs-section
+        font-size: 0.9rem
+        margin: 0 6%
+
+    .tariff-container
+        display: flex
+        padding: 0
+
+        .counter
+            border-right: 1px solid #aacde4
+            width: 2%
+            align-items: center
+            justify-content: center
+            text-align: center
+       
+    .tariff
+        width: 97%
+        justify-content: space-between
+        padding: 1rem
+
+        .tariff-speed-title
+            padding-bottom: 0.3rem
+
+        .tariff__download-speed, .tariff__upload-speed
+            padding-bottom: 0.5rem
+
+            .download-icon
+                padding: 0.1rem 1.5rem
+
+            .tarrif__download-speed-text
+                 padding: 0.1rem 1.5rem
+
+        .tariff__upload-speed
+            padding-bottom: 0
+
+        .tariff__price
+            font-size: 1.4rem
+
+        .tariff-benefits-container
+            width: 30%
+            .more-tariff-benefits
+                color: #2621ea
+                padding-top: 0.3rem
+                font-size: 0.7rem
+
+        .tariff-action-container
+            width: 25%
+
+@media (min-width: $layout-breakpoint-mobile)
+    @media (max-width: $layout-breakpoint-tablet)
+        .tariffs-section
+            font-size: 1rem
+
+        .tariff
+            .tariff-speed-title
+                display: none
+
+            .tariff-benefits-container
+                display: none
+
+@media (min-width: $layout-breakpoint-tablet)
+    .tariffs-section    
+        .tariff-action-container
+            width: 20%
+
+@media (min-width: $layout-breakpoint-large)
+    .tariffs-section
+        margin: 0 12%
+    
+        .tariff-action-container
+            width: 16%
