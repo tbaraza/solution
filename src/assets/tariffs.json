@@ -1,0 +1,104 @@
+[
+	{
+		"id": 454,
+		"name": "Tariff D",
+		"speed": {
+			"downloadSpeed": 40,
+			"uploadSpeed": 20,
+			"metric": "Mbit/s"
+		},
+		"price": 299.5,
+		"benefits": [
+			"Tariff Benefit 1",
+			"Tariff Benefit 2",
+			"Tariff Benefit 3",
+			"Tariff Benefit 4",
+			"Tariff Benefit 5"
+		]
+	},
+	{
+		"id": 44,
+		"name": "Tariff C",
+		"speed": {
+			"downloadSpeed": 50,
+			"uploadSpeed": 25,
+			"metric": "Mbit/s"
+		},
+		"price": 399.5,
+		"benefits": [
+			"Tariff Benefit 1",
+			"Tariff Benefit 2",
+			"Tariff Benefit 3",
+			"Tariff Benefit 4",
+			"Tariff Benefit 5"
+		]
+	},
+	{
+		"id": 100,
+		"name": "Tariff A",
+		"speed": {
+			"downloadSpeed": 100,
+			"uploadSpeed": 50,
+			"metric": "Mbit/s"
+		},
+		"benefits": [
+			"Tariff Benefit 1",
+			"Tariff Benefit 2",
+			"Tariff Benefit 3",
+			"Tariff Benefit 4",
+			"Tariff Benefit 5"
+		],
+		"price": 799.5
+	},
+	{
+		"id": 23,
+		"name": "Tariff D",
+		"speed": {
+			"downloadSpeed": 5,
+			"uploadSpeed": 20,
+			"metric": "Mbit/s"
+		},
+		"price": 199.5,
+		"benefits": [
+			"Tariff Benefit 1",
+			"Tariff Benefit 2",
+			"Tariff Benefit 3",
+			"Tariff Benefit 4",
+			"Tariff Benefit 5"
+		]
+	},
+	{
+		"id": 503,
+		"name": "Tariff B",
+		"speed": {
+			"downloadSpeed": 80,
+			"uploadSpeed": 40,
+			"metric": "Mbit/s"
+		},
+		"benefits": [
+			"Tariff Benefit 1",
+			"Tariff Benefit 2",
+			"Tariff Benefit 3",
+			"Tariff Benefit 4",
+			"Tariff Benefit 5"
+		],
+		"price": 599.5
+	},
+	{
+		"id": 98,
+		"name": "Tariff E",
+		"speed": {
+			"downloadSpeed": 10,
+			"uploadSpeed": 3,
+			"metric": "Mbit/s"
+		},
+		"price": 99.5,
+		"benefits": [
+			"Tariff Benefit 1",
+			"Tariff Benefit 2",
+			"Tariff Benefit 3",
+			"Tariff Benefit 4",
+			"Tariff Benefit 5"
+		]
+	}
+]
