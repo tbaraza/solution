@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { throwError, of, Observable } from 'rxjs';
 
+// TO DO: Move this to a type file
 export type Tariff = {
   id: number,
   name: string,
