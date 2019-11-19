@@ -58,7 +58,7 @@ describe('TariffListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should use the tariffList from the service', () => {
+  it('should use the tariffList from the tariff service', () => {
     const tariffService = fixture.debugElement.injector.get(TariffService);
     tariffService.getTariffs().subscribe((data) => {
       expect(data).toEqual(component.tariffs);
