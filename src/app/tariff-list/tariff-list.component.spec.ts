@@ -66,10 +66,13 @@ describe('TariffListComponent', () => {
     fixture = TestBed.createComponent(TariffListComponent);
     component = fixture.componentInstance;
 
-    // This sets up the location change listener and performs the initial navigation.
-    router.initialNavigation();
-    
     fixture.detectChanges();
+    
+    // This sets up the location change listener and performs the initial navigation.
+    fixture.ngZone.run(() => {
+      router.initialNavigation();
+    });
+    
   });
 
   it('should create', () => {
@@ -92,11 +95,14 @@ describe('TariffListComponent', () => {
   it('should go to tariff details page when To Tariff button is clicked', fakeAsync(() => {
     const buttonElement: HTMLElement = fixture.nativeElement;
     const button = buttonElement.querySelector('button');
-    button.click();
-    tick();
+    fixture.ngZone.run(() => {
 
-  // expecting to navigate to id of the component's first tariff
-  const id = component.tariffs[0].id;
+      button.click();
+      tick();
+      
+    });
+    // expecting to navigate to id of the component's first tariff
+    const id = component.tariffs[0].id;
     expect(location.path()).toBe(`/tariffs/${id}`);
   }));
 });

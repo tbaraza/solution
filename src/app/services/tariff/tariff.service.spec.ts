@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, tick, fakeAsync } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { defer } from 'rxjs';
 
@@ -104,11 +104,12 @@ describe('TariffService', () => {
     tariffService.getTariffs().subscribe(
       (tariffs: Tariff[]) => {
         expect(tariffs.length).toEqual(0),
-        (err) => {
+        ((err: string) => {
           expect(err).toEqual(errorMessage);
-        }
+        });
       });
 
+    expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
   });
 
   it('should sort tariffs based on price criteria', () => {
