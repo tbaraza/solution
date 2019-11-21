@@ -2,7 +2,7 @@
 <section class="tariffs-section">
     <h2>Tariffs</h2>
     
-    <div class="tariffs-sort-container">
+    <div *ngIf="tariffs.length > 0" class="tariffs-sort-container">
         <label class="tariffs-sort-label" for="tariffs-sort">sort by:</label>
         <select id="tariffs-sort" (change)="sortTariffs($event.target.value)">
             <option *ngFor="let filter of sortFilters" [value]="filter.value">{{ filter.label }}</option>
@@ -10,6 +10,9 @@
     </div>
     
     <div class="tariff-list-container">
+        <div *ngIf="tariffs.length === 0">
+            No trariffs to dispplay at the moment
+        </div>
         <div *ngFor="let tariff of tariffs; index as counter;" class="tariff-container">
             <p class="counter">{{ counter + 1 }}.</p>
             <div class="tariff">
